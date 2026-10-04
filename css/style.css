@@ -1,0 +1,145 @@
+:root {
+  --amber: #f59e0b;
+  --amber-dark: #d97706;
+  --cream: #fff7ed;
+  --ink: #3b2f1e;
+  --muted: #8a7a5f;
+  --card: #ffffff;
+  --mio: #3b82f6;
+}
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: -apple-system, "Segoe UI", "PingFang SC", "Microsoft YaHei", sans-serif;
+  color: var(--ink);
+  background: var(--cream);
+  line-height: 1.7;
+}
+
+/* ===== 导航 ===== */
+nav {
+  position: sticky; top: 0; z-index: 50;
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 14px 28px;
+  background: rgba(255, 251, 235, 0.92);
+  backdrop-filter: blur(8px);
+  border-bottom: 1px solid #fde68a;
+}
+nav .logo { font-weight: 800; font-size: 18px; letter-spacing: 1px; }
+nav .logo span { color: var(--amber); }
+nav .links { display: flex; gap: 22px; font-size: 14px; }
+nav .links a { text-decoration: none; color: var(--muted); transition: color .2s; }
+nav .links a:hover { color: var(--amber-dark); }
+nav .links a.active { color: var(--amber-dark); font-weight: 700; }
+
+/* ===== 通用 ===== */
+section { padding: 56px 24px; max-width: 1000px; margin: 0 auto; }
+h2 { font-size: 30px; margin-bottom: 8px; letter-spacing: 2px; }
+.sub { color: var(--muted); margin-bottom: 36px; }
+.badge {
+  display: inline-block; background: var(--amber); color: #fff;
+  padding: 4px 14px; border-radius: 999px; font-size: 13px;
+  font-weight: 700; letter-spacing: 1px; margin-bottom: 20px;
+}
+
+/* ===== Hero ===== */
+.hero {
+  text-align: center; padding: 96px 24px 80px;
+  background:
+    radial-gradient(ellipse at 20% 20%, #fde68a55, transparent 50%),
+    radial-gradient(ellipse at 80% 30%, #fbcfe855, transparent 50%),
+    var(--cream);
+}
+.hero h1 { font-size: 56px; letter-spacing: 6px; color: var(--amber-dark); margin-bottom: 12px; }
+.hero .jp { font-size: 20px; color: var(--muted); letter-spacing: 4px; }
+.hero .desc { max-width: 560px; margin: 24px auto 0; }
+.hero .instruments { margin-top: 28px; font-size: 40px; letter-spacing: 14px; }
+
+/* ===== 角色卡片 ===== */
+.characters { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 24px; }
+.card {
+  background: var(--card); border-radius: 16px; overflow: hidden;
+  box-shadow: 0 4px 20px rgba(180,130,40,.10);
+  transition: transform .2s, box-shadow .2s;
+  border-top: 5px solid var(--accent);
+}
+.card:hover { transform: translateY(-6px); box-shadow: 0 12px 32px rgba(180,130,40,.18); }
+.avatar {
+  position: relative; height: 200px;
+  display: flex; align-items: center; justify-content: center;
+  background: var(--accent-soft); overflow: hidden;
+}
+.avatar .emoji { font-size: 64px; }
+.avatar img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+.card .body { padding: 20px 22px 24px; }
+.card .name { font-size: 22px; font-weight: 800; }
+.card .name small { font-weight: 400; color: var(--muted); font-size: 13px; margin-left: 8px; }
+.card .role { color: var(--accent); font-weight: 700; font-size: 14px; margin: 6px 0 10px; }
+.card .bio { font-size: 14px; color: #6b5d45; }
+
+/* ===== 乐队 ===== */
+.band {
+  background: #2d2418; color: #f7eedd; border-radius: 20px;
+  padding: 48px 36px; text-align: center;
+}
+.band h2 { color: #fbbf24; }
+.band .sub { color: #c9b896; }
+.band .tea { font-size: 42px; margin-bottom: 16px; }
+.band p { max-width: 640px; margin: 0 auto; color: #e6d7bf; }
+
+/* ===== 歌曲 ===== */
+.songs { display: grid; gap: 12px; }
+.song {
+  display: flex; align-items: center; justify-content: space-between;
+  background: var(--card); padding: 16px 22px; border-radius: 12px;
+  box-shadow: 0 2px 10px rgba(180,130,40,.08);
+}
+.song .t { font-weight: 700; }
+.song .t small { font-weight: 400; color: var(--muted); margin-left: 8px; }
+.song .tag { background: var(--amber); color: #fff; font-size: 12px; padding: 2px 10px; border-radius: 999px; }
+
+/* ===== 澪专栏 ===== */
+.mio-hero {
+  display: flex; gap: 32px; align-items: center;
+  background: linear-gradient(135deg, #dbeafe, #eff6ff);
+  border-radius: 20px; padding: 40px; margin-bottom: 24px;
+}
+.mio-hero .mio-avatar {
+  width: 160px; height: 160px; border-radius: 50%; flex: none;
+  display: flex; align-items: center; justify-content: center;
+  background: #93c5fd; font-size: 72px; position: relative; overflow: hidden;
+  border: 4px solid #fff; box-shadow: 0 8px 24px rgba(59,130,246,.25);
+}
+.mio-hero .mio-avatar img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+.mio-hero h2 { font-size: 34px; }
+.mio-hero .jp { color: var(--muted); letter-spacing: 2px; }
+.mio-hero p { margin-top: 12px; max-width: 520px; }
+
+.stats { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 16px; margin-bottom: 40px; }
+.stat { background: var(--card); border-radius: 14px; padding: 18px; text-align: center; box-shadow: 0 2px 10px rgba(59,130,246,.08); }
+.stat .k { font-size: 13px; color: var(--muted); }
+.stat .v { font-size: 22px; font-weight: 800; color: var(--mio); margin-top: 4px; }
+
+.quote {
+  background: #fff; border-left: 4px solid var(--mio); border-radius: 0 12px 12px 0;
+  padding: 20px 24px; margin: 24px 0; font-style: italic; color: #4b5563;
+  box-shadow: 0 2px 10px rgba(59,130,246,.08);
+}
+
+.reasons { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 16px; }
+.reason { background: var(--card); border-radius: 14px; padding: 22px; box-shadow: 0 2px 10px rgba(180,130,40,.08); }
+.reason .icon { font-size: 28px; margin-bottom: 8px; }
+.reason h3 { font-size: 17px; margin-bottom: 6px; }
+.reason p { font-size: 14px; color: #6b5d45; }
+
+footer {
+  text-align: center; padding: 40px 24px; color: var(--muted);
+  font-size: 13px; border-top: 1px solid #fde68a;
+}
+
+@media (max-width: 640px) {
+  .hero h1 { font-size: 40px; letter-spacing: 3px; }
+  nav .links { display: none; }
+  .mio-hero { flex-direction: column; text-align: center; }
+}
